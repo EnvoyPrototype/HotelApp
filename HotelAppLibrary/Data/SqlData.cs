@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HotelAppLibrary.Data
 {
-    public class SqlData
+    public class SqlData : IDatabaseData
     {
         private readonly ISqlDataAccess _db;
         private const string connectionStringName = "SqlDb";
@@ -43,16 +43,16 @@ namespace HotelAppLibrary.Data
 
             TimeSpan timeStaying = endDate.Date.Subtract(startDate.Date);
 
-            List<RoomModel> availableRooms = _db.LoadData<RoomModel, dynamic>("dbo.spRooms_GetAvailableRooms", 
+            List<RoomModel> availableRooms = _db.LoadData<RoomModel, dynamic>("dbo.spRooms_GetAvailableRooms",
                                                                               new { startDate, endDate, roomTypeId },
-                                                                              connectionStringName, 
+                                                                              connectionStringName,
                                                                               true);
 
             _db.SaveData("dbo.spBookings_Insert",
-                         new 
-                         { 
-                             roomId = availableRooms.First().Id, 
-                             guestId = guest.Id ,
+                         new
+                         {
+                             roomId = availableRooms.First().Id,
+                             guestId = guest.Id,
                              startDate = startDate,
                              endDate = endDate,
                              totalCost = timeStaying.Days * roomType.Price
