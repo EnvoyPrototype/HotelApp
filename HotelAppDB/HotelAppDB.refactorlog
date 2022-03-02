@@ -7,4 +7,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="RoomTypeId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="16a60dee-c288-4278-bfdc-23a6f0d80b9f" ChangeDateTime="03/02/2022 03:56:18">
+    <Property Name="ElementName" Value="[dbo].[Bookings].[CheckId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bookings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CheckedIn" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7658e29c-00a6-482b-ad6a-07d5c61e09a7" ChangeDateTime="03/02/2022 03:56:58">
+    <Property Name="ElementName" Value="[dbo].[Bookings].[CheckedIn]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bookings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CheckId" />
+  </Operation>
 </Operations>
